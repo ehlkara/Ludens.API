@@ -1,4 +1,5 @@
 using Ludens.Core.Context;
+using Ludens.Core.Helpers;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Reflection;
@@ -33,5 +34,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.MigrateDatabase().GetAwaiter();
 app.Run();

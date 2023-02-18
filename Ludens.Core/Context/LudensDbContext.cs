@@ -12,6 +12,7 @@ namespace Ludens.Core.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<FundPrices>().HasOne(p => p.Funds).WithMany(p => p.FundPrices).HasForeignKey(p => p.FundId);
 
             base.OnModelCreating(modelBuilder);
         }
