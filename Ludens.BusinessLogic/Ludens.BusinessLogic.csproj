@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Ludens.DataAccess\Ludens.DataAccess.csproj" />
+    <ProjectReference Include="..\Ludens.Shared\Ludens.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

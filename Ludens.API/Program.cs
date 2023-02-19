@@ -1,3 +1,6 @@
+using Autofac.Extensions.DependencyInjection;
+using Autofac;
+using Ludens.API.Modules;
 using Ludens.Core.Context;
 using Ludens.Core.Helpers;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +17,9 @@ builder.Services.AddDbContext<LudensDbContext>(x =>
         options.MigrationsAssembly(Assembly.GetAssembly(typeof(LudensDbContext)).GetName().Name);
     });
 });
+
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder => containerBuilder.RegisterModule(new RepoServiceModule()));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
