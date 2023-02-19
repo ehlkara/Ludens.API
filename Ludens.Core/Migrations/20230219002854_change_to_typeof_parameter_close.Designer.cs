@@ -4,6 +4,7 @@ using Ludens.Core.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ludens.Core.Migrations
 {
     [DbContext(typeof(LudensDbContext))]
-    partial class LudensDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230219002854_change_to_typeof_parameter_close")]
+    partial class change_to_typeof_parameter_close
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

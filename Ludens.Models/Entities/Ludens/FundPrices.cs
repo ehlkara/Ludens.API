@@ -6,6 +6,6 @@
         public string FundId { get; set; }
         public Funds Funds { get; set; }
         public DateTime Date { get; set; }
-        public decimal Close { get; set; }
+        public double Close { get; set; }
     }
 }
